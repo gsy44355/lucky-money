@@ -15,8 +15,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-@RestController
-@RequestMapping("luckymoney")
+//@RestController
+//@RequestMapping("luckymoney")
 public class LuckyMoneyController {
     @Autowired
     private LuckyMoneyRepository repository;

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
-@Component
+//@Component
 public class TestTask {
 //    @Scheduled(fixedRate = 3000)
     @Scheduled(cron = "4-40 * * * * ? ")

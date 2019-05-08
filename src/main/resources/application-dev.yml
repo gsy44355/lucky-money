@@ -7,6 +7,11 @@ limit:
   maxMoney: 999
   description: 最少要发${limit.minMoney}块啊= = 最大 ${limit.maxMoney}.
 spring:
+  devtools:
+    restart:
+
+  thymeleaf:
+    cache: true
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/lucky_money?characterEncoding=utf-8
@@ -16,3 +21,17 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+mybatis:
+  type-aliases-package: com.gsy.luckymoney.pojo
+  mapper-locations: classpath:mapper/*.xml
+
+mapper:
+  mappers: com.gsy.luckymoney.utils.MyMapper
+  not-empty: false
+  identity: MYSQL
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 @Component
 @ConfigurationProperties(prefix = "limit")
-@PropertySource("classpath:application.yml")
+@PropertySource(value = "classpath:application.properties")
 public class LimitConfig {
     private BigDecimal minMoney;
     private  BigDecimal maxMoney;
@@ -34,6 +34,6 @@ public class LimitConfig {
     }
 
     public void setDescription(String description) {
-        this.description = description;
+        this.description = description+"aaaaaaaaaaaaaa";
     }
 }

@@ -1,5 +1,7 @@
 package com.gsy.luckymoney.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.Entity;
@@ -15,6 +17,7 @@ import java.math.BigDecimal;
 public class Luckymoney {
     @Id
     @GeneratedValue
+    @JsonIgnore
     private Integer id;
     @DecimalMin(value = "10",message = "不能比我设置的还小")
     public BigDecimal money;
@@ -25,6 +28,7 @@ public class Luckymoney {
     /**
      * 接收方
      */
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private  String consumer;
 
     public Luckymoney() {
